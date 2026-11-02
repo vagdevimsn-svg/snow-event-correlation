@@ -1,0 +1,29 @@
+[
+  {
+    "short_description": "[Online Payments] Database response time above 2s",
+    "cmdb_ci": "db_paydb01",
+    "business_service": "Online Payments",
+    "priority": 1,
+    "assignment_group": "",
+    "work_notes": "Correlated alerts:\n- SolarWinds|paydb01|db_latency|PAYDB01 sev=1 count=1\n- SolarWinds|lnx-pay-01|http_5xx|/payments sev=2 count=2",
+    "u_alert_count": 2
+  },
+  {
+    "short_description": "[Branch Reporting] Disk /var at 85%",
+    "cmdb_ci": "srv_lnx_rpt_01",
+    "business_service": "Branch Reporting",
+    "priority": 4,
+    "assignment_group": "",
+    "work_notes": "Correlated alerts:\n- Prometheus|lnx-rpt-01|disk_usage|/var sev=4 count=1",
+    "u_alert_count": 1
+  },
+  {
+    "short_description": "[UNMAPPED] CPU above 90%",
+    "cmdb_ci": "",
+    "business_service": "",
+    "priority": 4,
+    "assignment_group": "",
+    "work_notes": "Correlated alerts:\n- Prometheus|unknown-host-7|cpu|cpu sev=3 count=1",
+    "u_alert_count": 1
+  }
+]
