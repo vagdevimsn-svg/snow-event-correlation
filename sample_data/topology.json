@@ -1,0 +1,18 @@
+{
+  "_comment": "Synthetic topology. Mirrors cmdb_rel_ci walked upward from infrastructure to application service.",
+  "ci_by_host": {
+    "lnx-pay-01": "srv_lnx_pay_01",
+    "lnx-pay-02": "srv_lnx_pay_02",
+    "paydb01": "db_paydb01",
+    "lnx-rpt-01": "srv_lnx_rpt_01"
+  },
+  "parent_of": {
+    "srv_lnx_pay_01": "app_payments_api",
+    "srv_lnx_pay_02": "app_payments_api",
+    "db_paydb01": "app_payments_api",
+    "app_payments_api": "Online Payments",
+    "srv_lnx_rpt_01": "app_reporting",
+    "app_reporting": "Branch Reporting"
+  },
+  "service_tier": {"Online Payments": 1, "Branch Reporting": 3}
+}
