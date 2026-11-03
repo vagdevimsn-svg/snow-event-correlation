@@ -1,0 +1,27 @@
+name: Quality
+on: [push, pull_request]
+jobs:
+  lint-test-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[dev]"
+      - run: ruff check .
+      - run: pytest -q --cov=event_corr --cov-report=term-missing --cov-fail-under=80
+      - run: event-corr --alerts sample_data/alerts.json --topology sample_data/topology.json --metrics
+  docker-smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t event-corr .
+      - run: docker run -d --name ec -p 8000:8000 event-corr
+      - run: |
+          for i in $(seq 1 20); do curl -fs http://127.0.0.1:8000/health && break; sleep 1; done
+          curl -fs -X POST -H "Content-Type: application/json" --data @sample_data/alerts.json http://127.0.0.1:8000/events
+          curl -fs http://127.0.0.1:8000/metrics | tee metrics.json
+          python3 -c "import json; m=json.load(open('metrics.json')); assert m['incidents'] == 3, m"
+      - if: always()
+        run: docker logs ec
