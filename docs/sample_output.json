@@ -5,6 +5,8 @@
     "business_service": "Online Payments",
     "priority": 1,
     "assignment_group": "",
+    "correlation_id": "evc-c23459b0a6f8cd98c4f6",
+    "correlation_display": "event-corr",
     "work_notes": "Correlated alerts:\n- SolarWinds|paydb01|db_latency|PAYDB01 sev=1 count=1\n- SolarWinds|lnx-pay-01|http_5xx|/payments sev=2 count=2",
     "u_alert_count": 2
   },
@@ -14,6 +16,8 @@
     "business_service": "Branch Reporting",
     "priority": 4,
     "assignment_group": "",
+    "correlation_id": "evc-8b94ecdaa6c38b419de8",
+    "correlation_display": "event-corr",
     "work_notes": "Correlated alerts:\n- Prometheus|lnx-rpt-01|disk_usage|/var sev=4 count=1",
     "u_alert_count": 1
   },
@@ -23,6 +27,8 @@
     "business_service": "",
     "priority": 4,
     "assignment_group": "",
+    "correlation_id": "evc-baa655b6917c8f3726d5",
+    "correlation_display": "event-corr",
     "work_notes": "Correlated alerts:\n- Prometheus|unknown-host-7|cpu|cpu sev=3 count=1",
     "u_alert_count": 1
   }

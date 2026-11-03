@@ -1,0 +1,153 @@
+{
+  "cmdb_ci": [
+    {
+      "sys_id": "bapp01",
+      "name": "Digital Payments",
+      "sys_class_name": "cmdb_ci_business_app",
+      "install_status": "1",
+      "owned_by": "u_owner1",
+      "it_application_owner": "u_itown1"
+    },
+    {
+      "sys_id": "svc001",
+      "name": "Online Payments",
+      "sys_class_name": "cmdb_ci_service_auto",
+      "install_status": "1",
+      "owned_by": "u_owner1",
+      "support_group": "grp_pay",
+      "busines_criticality": "1 - most critical"
+    },
+    {
+      "sys_id": "svc002",
+      "name": "Branch Reporting",
+      "sys_class_name": "cmdb_ci_service_auto",
+      "install_status": "1",
+      "owned_by": "",
+      "support_group": "grp_rpt",
+      "busines_criticality": "3 - less critical"
+    },
+    {
+      "sys_id": "app001",
+      "name": "payments-api",
+      "sys_class_name": "cmdb_ci_appl",
+      "install_status": "1",
+      "owned_by": "u_owner1",
+      "support_group": "grp_pay"
+    },
+    {
+      "sys_id": "app002",
+      "name": "ledger-batch",
+      "sys_class_name": "cmdb_ci_appl",
+      "install_status": "1",
+      "owned_by": "u_owner2",
+      "support_group": ""
+    },
+    {
+      "sys_id": "srv001",
+      "name": "lnx-pay-01",
+      "sys_class_name": "cmdb_ci_server",
+      "install_status": "1",
+      "serial_number": "SYN-0001",
+      "ip_address": "10.0.0.11",
+      "os": "Linux Red Hat",
+      "support_group": "grp_unix",
+      "last_discovered": "2026-10-30 04:00:00"
+    },
+    {
+      "sys_id": "srv002",
+      "name": "lnx-pay-02",
+      "sys_class_name": "cmdb_ci_server",
+      "install_status": "1",
+      "serial_number": "SYN-0002",
+      "ip_address": "10.0.0.12",
+      "os": "Linux Red Hat",
+      "support_group": "grp_unix",
+      "last_discovered": "2026-07-01 04:00:00"
+    },
+    {
+      "sys_id": "srv003",
+      "name": "LNX-PAY-02",
+      "sys_class_name": "cmdb_ci_server",
+      "install_status": "1",
+      "serial_number": "syn-0002",
+      "ip_address": "10.0.0.12",
+      "os": "Linux Red Hat",
+      "support_group": "grp_unix",
+      "last_discovered": "2026-10-29 04:00:00"
+    },
+    {
+      "sys_id": "srv004",
+      "name": "win-rpt-01",
+      "sys_class_name": "cmdb_ci_server",
+      "install_status": "1",
+      "serial_number": "SYN-0004",
+      "ip_address": "",
+      "os": "Windows 2022",
+      "support_group": "grp_win",
+      "last_discovered": ""
+    },
+    {
+      "sys_id": "srv005",
+      "name": "win-old-09",
+      "sys_class_name": "cmdb_ci_server",
+      "install_status": "7",
+      "serial_number": "SYN-0009",
+      "ip_address": "10.0.9.9",
+      "os": "Windows 2012",
+      "support_group": "grp_win",
+      "last_discovered": "2024-01-01 00:00:00"
+    },
+    {
+      "sys_id": "db001",
+      "name": "PAYDB01",
+      "sys_class_name": "cmdb_ci_db_instance",
+      "install_status": "1",
+      "support_group": "grp_dba",
+      "last_discovered": "2026-10-30 05:00:00"
+    }
+  ],
+  "cmdb_rel_ci": [
+    {
+      "sys_id": "rel0",
+      "parent": "bapp01",
+      "child": "svc001",
+      "type": "Consumes::Consumed by"
+    },
+    {
+      "sys_id": "rel1",
+      "parent": "svc001",
+      "child": "app001",
+      "type": "Depends on::Used by"
+    },
+    {
+      "sys_id": "rel2",
+      "parent": "app001",
+      "child": "srv001",
+      "type": "Runs on::Runs"
+    },
+    {
+      "sys_id": "rel3",
+      "parent": "app001",
+      "child": "srv002",
+      "type": "Runs on::Runs"
+    },
+    {
+      "sys_id": "rel4",
+      "parent": "app001",
+      "child": "db001",
+      "type": "Depends on::Used by"
+    },
+    {
+      "sys_id": "rel5",
+      "parent": "app002",
+      "child": "srv999",
+      "type": "Runs on::Runs"
+    },
+    {
+      "sys_id": "rel6",
+      "parent": "app002",
+      "child": "srv005",
+      "type": "Runs on::Runs"
+    }
+  ]
+}

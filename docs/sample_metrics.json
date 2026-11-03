@@ -1,0 +1,11 @@
+{
+  "raw_events": 16,
+  "rejected": 1,
+  "unique_alerts": 7,
+  "open": 5,
+  "closed": 1,
+  "suppressed_maintenance": 1,
+  "flapping": 1,
+  "incidents": 3,
+  "noise_reduction_pct": 80.0
+}

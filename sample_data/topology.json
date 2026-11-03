@@ -4,7 +4,8 @@
     "lnx-pay-01": "srv_lnx_pay_01",
     "lnx-pay-02": "srv_lnx_pay_02",
     "paydb01": "db_paydb01",
-    "lnx-rpt-01": "srv_lnx_rpt_01"
+    "lnx-rpt-01": "srv_lnx_rpt_01",
+    "lnx-pay-03": "srv_lnx_pay_03"
   },
   "parent_of": {
     "srv_lnx_pay_01": "app_payments_api",
@@ -12,7 +13,19 @@
     "db_paydb01": "app_payments_api",
     "app_payments_api": "Online Payments",
     "srv_lnx_rpt_01": "app_reporting",
-    "app_reporting": "Branch Reporting"
+    "app_reporting": "Branch Reporting",
+    "srv_lnx_pay_03": "app_payments_api"
   },
-  "service_tier": {"Online Payments": 1, "Branch Reporting": 3}
+  "service_tier": {
+    "Online Payments": 1,
+    "Branch Reporting": 3
+  },
+  "maintenance": [
+    {
+      "ci": "srv_lnx_pay_03",
+      "start": "2026-10-30T13:30:00Z",
+      "end": "2026-10-30T15:00:00Z",
+      "_comment": "patching (CHG-synthetic)"
+    }
+  ]
 }
